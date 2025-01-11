@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Valentine Card</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(33deg, #edf2f7, #edf2f7);
+            background-size: cover;
+        }
+
+        .envelope {
+            content: url(https://assets.codepen.io/4927073/Envelope3.png);
+            width: 80%;
+            max-width: 300px;
+            position: absolute;
+            top: 10%;
+            filter: drop-shadow(1.5px 0.75px 1.75px #4d4d4d);
+        }
+
+        .card-container {
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 260px;
+            height: 370px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform-origin: center;
+            transition: transform 1s;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .front {
+            background: #e8e6e3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .front img {
+            width: 80%;
+            height: auto;
+        }
+
+        .back {
+            background: #fff;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            color: #929292;
+            font-size: 1.2rem;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 675px) {
+            .envelope {
+                width: 70%;
+                max-width: 250px;
+                top: 5%;
+            }
+
+            .card {
+                width: 220px;
+                height: 320px;
+            }
+
+            .back {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .envelope {
+                width: 60%;
+            }
+
+            .card {
+                width: 200px;
+                height: 300px;
+            }
+
+            .back {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope"></div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-face front">
+                <img src="https://assets.codepen.io/4927073/ValCard.png" alt="Valentine's Card">
+            </div>
+            <div class="card-face back">
+                <h3>Happy Valentine's Day jan ❤️!!
+                </h3>
+                <p>Tum ko jab se me dekha hu uske bad se pagal hi ho chuka hu, mera nashib me tum ho ya na ho but bhagwan se yahi dua karunga muje sirf tum jaisa hamsafar mile 🥺 jiske sath me ye janam to kat lu...❤️</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
